@@ -1,73 +1,140 @@
-# 🏀 What Makes the Oklahoma City Thunder Win?
+# 🏀 NBA Thunder Win Prediction Analysis
 
-A data science project that explores the key factors behind the success of the **2024–25 NBA Champions**, the **Oklahoma City Thunder**, using official NBA game statistics collected through `nba_api`.
+A data analysis project that investigates which game statistics contribute most to the Oklahoma City Thunder's victories during the 2024–25 NBA season.
 
-The goal of this project is to understand what contributes to winning games by applying the complete data science workflow, from data collection to machine learning.
+## 📌 Project Overview
+
+The objective of this project is to identify the key factors associated with winning games using statistical analysis and machine learning.
+
+The workflow includes:
+
+- Data collection using the NBA API
+- Exploratory Data Analysis (EDA)
+- Statistical hypothesis testing (t-test)
+- Random Forest classification
+- Feature Importance analysis
+- Cross Validation
 
 ---
 
-## 🎯 Objectives
-
-- Collect NBA game and player statistics using the NBA API
-- Clean and preprocess raw data
-- Perform exploratory data analysis (EDA)
-- Identify the most influential factors behind Thunder victories
-- Build machine learning models to predict game outcomes
-- Communicate findings through clear visualizations
-
----
-
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
 - Python
 - pandas
 - NumPy
 - matplotlib
+- scipy
 - scikit-learn
 - nba_api
 - Jupyter Notebook
-- Git & GitHub
 
 ---
 
 ## 📂 Project Structure
 
-```text
+```
 nba-thunder-analysis/
-├── data/          # Raw and processed datasets
-├── notebooks/     # Exploratory analysis
-├── src/           # Python scripts
-├── images/        # Figures used in README
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+│   └── 01_data_collection.ipynb
+│
+├── images/
+│
+├── src/
+│
 ├── requirements.txt
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
 ---
 
-## 📊 Planned Analysis
+## 📊 Exploratory Data Analysis
 
-This project aims to answer questions such as:
+The average values of major game statistics were compared between wins and losses.
 
-- Which statistics are most strongly associated with winning?
-- How does the Thunder perform differently in wins and losses?
-- Which players have the greatest impact on team success?
-- How do the Thunder compare with other NBA teams?
-- Can game outcomes be predicted using machine learning?
+Variables analyzed:
+
+- FG%
+- 3PT%
+- Rebounds
+- Assists
+- Turnovers
+
+---
+
+## 📈 Statistical Analysis
+
+An independent two-sample t-test was performed.
+
+Result:
+
+- FG% showed a statistically significant difference.
+- Other variables showed smaller or non-significant differences.
+
+---
+
+## 🤖 Machine Learning
+
+Model:
+
+- Random Forest Classifier
+
+Features:
+
+- FG%
+- 3PT%
+- Rebounds
+- Assists
+- Turnovers
+
+Target:
+
+- Win / Loss
+
+Cross Validation Results
+
+| Metric | Score |
+|--------|------:|
+| Accuracy | 0.734 |
+| Precision | 0.865 |
+| Recall | 0.812 |
+| F1-score | 0.827 |
+
+---
+
+## ⭐ Feature Importance
+
+![Feature Importance](images/feature_importance.png)
+
+Feature importance ranking:
+
+| Rank | Feature |
+|------|---------|
+| 1 | FG% |
+| 2 | Rebounds |
+| 3 | 3PT% |
+| 4 | Assists |
+| 5 | Turnovers |
+
+---
+
+## 💡 Conclusion
+
+This analysis suggests that shooting efficiency (FG%) is the strongest predictor of winning games.
+
+Rebounding and three-point shooting also contribute substantially to game outcomes.
+
+The project demonstrates an end-to-end data science workflow from data collection through statistical testing and predictive modeling.
 
 ---
 
 ## 🚀 Future Work
 
-- Feature engineering
-- Win prediction using Random Forest and XGBoost
-- Interactive dashboard with Streamlit
-- Comparison with other championship teams
-
----
-
-## 📌 Motivation
-
-As a former basketball player and an aspiring data scientist, I wanted to combine my passion for basketball with data analysis.
-
-By analyzing the Oklahoma City Thunder, the 2024–25 NBA Champions, this project serves as an opportunity to practice practical data science skills while exploring what makes a championship team successful.
+- ROC Curve / AUC
+- Hyperparameter tuning
+- XGBoost comparison
+- SHAP value analysis
