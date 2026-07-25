@@ -110,16 +110,9 @@ Cross Validation Results
 
 ![Feature Importance](images/feature_importance.png)
 
-Feature importance ranking:
+The Random Forest model identified **FG%** as the most influential feature for predicting game outcomes.
 
-| Rank | Feature |
-|------|---------|
-| 1 | FG% |
-| 2 | Rebounds |
-| 3 | 3PT% |
-| 4 | Assists |
-| 5 | Turnovers |
-
+Three-point shooting percentage and rebounds were also important contributors, while assists and turnovers had relatively smaller contributions.
 ---
 
 ## 💡 Conclusion
